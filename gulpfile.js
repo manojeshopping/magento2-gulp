@@ -132,9 +132,13 @@ gulp.task('less', function() {
 gulp.task('watch', function() {
 	console.log('\x1b[32m', '====================================' ,'\x1b[0m');
 	console.log(' Watching:\x1b[32m', themesConfig[themeName].area + '/' + themesConfig[themeName].name ,'\x1b[0m');
-	console.log('\x1b[32m', '====================================' ,'\x1b[0m');
-	if (liveReload >= 0) {
+
+	if (liveReload > 0) {
+		console.log(' LiveReload:\x1b[32m', ' enabled','\x1b[0m');
 		livereload.listen();
 	}
-	gulp.watch([path + '/css/source/**/*.less'],['less']);
+
+	console.log('\x1b[32m', '====================================' ,'\x1b[0m');
+
+	gulp.watch([path + '**/*.less'],['less']);
 });
