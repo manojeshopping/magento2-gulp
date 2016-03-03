@@ -1,0 +1,20 @@
+{
+  "name": "magento2-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poddubny/magento2-gulp.git"
+  },
+  "author": "Andrew Poddubny",
+  "homepage": "https://github.com/poddubny/magento2-gulp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-if": "^2.0.0",
+    "gulp-livereload": "^3.8.1"
+  }
+}
