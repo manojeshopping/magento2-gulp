@@ -108,18 +108,18 @@ gulp.task('less', function() {
 
 	// Get Array with files
 	return gulp.src(lessFiles)
+	
+	// Source map
+    	.pipe(gulpif(sourceMapArg >= 0, sourcemaps.init()))
 
 	// Less compilation
 	.pipe(less().on('error', function(err) {
       	console.log(err);
     }))
 
-    // Source map
-    .pipe(gulpif(sourceMapArg >= 0, sourcemaps.init()))
-	.pipe(gulpif(sourceMapArg >= 0, sourcemaps.write('.', {includeContent:false, sourceRoot: '..'})))
-
 	// Minify css
 	.pipe(gulpif(minCssArg >= 0, cssmin()))
+	
 	
     // Destination folder
     .pipe(gulp.dest( path + 'css/'))
