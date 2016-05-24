@@ -120,6 +120,7 @@ gulp.task('less', function() {
 	// Minify css
 	.pipe(gulpif(minCssArg >= 0, cssmin()))
 	
+	.pipe(gulpif(sourceMapArg >= 0, sourcemaps.write('.')))
 	
     // Destination folder
     .pipe(gulp.dest( path + 'css/'))
